@@ -9,3 +9,4 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 router = Router()
 FILE_ID = "BAACAgIAAxkBAAMHZ-6YYKeVrN_QdIQMtKTTgxMasuMAAgJwAAJLHHBL55lkeWkCB8c2BA"  # Вставте отриманий file_id
+DB_PATH = "users.db"
