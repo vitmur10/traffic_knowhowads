@@ -119,5 +119,5 @@ def mark_user_blocked(user_id: int):
     conn.close()
 
 
-
+init_db()
 

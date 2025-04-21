@@ -141,3 +141,4 @@ def get_user_first_access_time(chat_id):
     else:
         return None  # Якщо користувач не знайдений
 
+init_db()
