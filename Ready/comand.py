@@ -96,7 +96,7 @@ async def delayed_messages(chat_id: int, username):
 
 
     try:
-        await asyncio.sleep(60)
+        await asyncio.sleep(60*10)
         await bot.send_media_group(chat_id=chat_id, media=[
             InputMediaPhoto(media=FSInputFile("4/1.jpg")),
             InputMediaPhoto(media=FSInputFile("4/2.jpg")),
