@@ -93,9 +93,10 @@ async def download_csv(callback_query: types.CallbackQuery):
 async def delayed_messages(chat_id: int, username):
     """Функція для відправки повідомлень із затримкою"""
 
-    await asyncio.sleep(60*10)
+
 
     try:
+        await asyncio.sleep(60)
         await bot.send_media_group(chat_id=chat_id, media=[
             InputMediaPhoto(media=FSInputFile("4/1.jpg")),
             InputMediaPhoto(media=FSInputFile("4/2.jpg")),
