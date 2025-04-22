@@ -36,17 +36,17 @@ def add_or_update_user(user_id: int, username: str, last_message: str, chat_id: 
 
     if result is None:
         # Якщо користувача немає — вставити з joined_at
-        cur.execute("""
+        cur.execute(""" 
             INSERT INTO users (user_id, username, last_message, is_blocked, joined_at)
             VALUES (?, ?, ?, ?, ?)
         """, (user_id, username, last_message, is_blocked, joined_at))
     else:
-        # Якщо користувач є — оновити інші поля, joined_at залишити незмінним
+        # Якщо користувач є — оновити всі поля, включаючи joined_at
         cur.execute("""
             UPDATE users
-            SET username = ?, last_message = ?, is_blocked = ?
+            SET username = ?, last_message = ?, is_blocked = ?, joined_at = ?
             WHERE user_id = ?
-        """, (username, last_message, is_blocked, user_id))
+        """, (username, last_message, is_blocked, joined_at, user_id))
 
     conn.commit()
     conn.close()
@@ -131,7 +131,7 @@ def get_user_first_access_time(chat_id):
     connection = sqlite3.connect(DB_PATH)
     cursor = connection.cursor()
 
-    cursor.execute('SELECT first_access_time FROM users WHERE chat_id = ?', (chat_id,))
+    cursor.execute('SELECT joined_at FROM users WHERE user_id = ?', (chat_id,))
     result = cursor.fetchone()
 
     connection.close()

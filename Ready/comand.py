@@ -94,7 +94,6 @@ async def delayed_messages(chat_id: int, username):
     """Функція для відправки повідомлень із затримкою"""
 
 
-
     try:
         await asyncio.sleep(60*10)
         await bot.send_media_group(chat_id=chat_id, media=[
@@ -193,7 +192,7 @@ https://balibeauty.com.ua/""")
             parse_mode="HTML"  # Використовуємо HTML форматування
         )
         add_or_update_user(chat_id, username, "4", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=1, target_hour=11)
+        delay = calculate_delay_from_first_access(chat_id, target_day_offset=0, target_hour=11)
         await asyncio.sleep(delay)
         # Надсилаємо медіа-групу
         await bot.send_photo(chat_id=chat_id, photo=FSInputFile("5/5.jpg"), caption="""
@@ -262,8 +261,7 @@ https://balibeauty.com.ua/""")
                                           InputMediaPhoto(media=FSInputFile("5/photo_23_2025-04-19_16-17-35.jpg")),
                                           InputMediaPhoto(media=FSInputFile("5/photo_24_2025-04-19_16-17-35.jpg"))])
         add_or_update_user(chat_id, username, "5", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=1, target_hour=15)
-        await asyncio.sleep(delay)
+        await asyncio.sleep(3600*4)
         # Відправляємо додаткове повідомлення
         await bot.send_message(
             chat_id=chat_id,
@@ -286,8 +284,7 @@ https://balibeauty.com.ua/""")
         ]
         await bot.send_media_group(chat_id=chat_id, media=media)
         add_or_update_user(chat_id, username, "6", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=1, target_hour=18)
-        await asyncio.sleep(delay)
+        await asyncio.sleep(3600*7)
         await bot.send_message(
             chat_id=chat_id,
             text="""<strong>Постачальники</strong> - це офіційні дистриб'ютори брендів в Україні. 
@@ -331,7 +328,7 @@ https://balibeauty.com.ua/""")
             InputMediaPhoto(media=FSInputFile("7/photo_14_2025-04-19_21-53-56.jpg")),
         ])
         add_or_update_user(chat_id, username, "7", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=2, target_hour=11)
+        delay = calculate_delay_from_first_access(chat_id, target_day_offset=0, target_hour=11)
         await asyncio.sleep(delay)
         await bot.send_message(
             chat_id=chat_id,
@@ -352,8 +349,7 @@ https://balibeauty.com.ua/""")
         await bot.send_media_group(chat_id=chat_id, media=media)
 
         add_or_update_user(chat_id, username, "8", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=2, target_hour=15)
-        await asyncio.sleep(delay)
+        await asyncio.sleep(3600*4)
         await bot.send_message(
             chat_id=chat_id,
             text="""<strong>Кейс 1 мільйон 700 тисяч грн через кошик з інтернет-магазину</strong>
@@ -370,8 +366,7 @@ https://balibeauty.com.ua/""")
         ]
         await bot.send_media_group(chat_id=chat_id, media=media)
         add_or_update_user(chat_id, username, "9", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=2, target_hour=18)
-        await asyncio.sleep(delay)
+        await asyncio.sleep(3600*7)
 
         await bot.send_message(
             chat_id=chat_id,
@@ -386,7 +381,7 @@ https://balibeauty.com.ua/""")
                                                            ])
 
         add_or_update_user(chat_id, username, "10", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=4, target_hour=11)
+        delay = calculate_delay_from_first_access(chat_id, target_day_offset=0, target_hour=11)
         await asyncio.sleep(delay)
         await bot.send_media_group(chat_id=chat_id, media=[InputMediaPhoto(media=FSInputFile("11/1.jpg")),
                                                            InputMediaPhoto(media=FSInputFile("11/2.jpg")),
@@ -424,7 +419,7 @@ https://balibeauty.com.ua/""")
             reply_markup=order
             , parse_mode="HTML")
         add_or_update_user(chat_id, username, "11", 0)
-        delay = calculate_delay_from_first_access(chat_id, target_day_offset=5, target_hour=11)
+        delay = calculate_delay_from_first_access(chat_id, target_day_offset=0, target_hour=11)
         await asyncio.sleep(delay)
         await bot.send_message(
             chat_id=chat_id,
