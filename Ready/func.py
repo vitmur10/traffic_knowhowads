@@ -12,7 +12,6 @@ def calculate_delay_from_first_access(chat_id, target_hour, target_minute=0, tar
         first_access_time = datetime.strptime(first_access_time, '%Y-%m-%d %H:%M:%S')  # Підлаштуйте формат, якщо потрібно
 
     # Логування для перевірки значень
-    print(f"first_access_time: {first_access_time}")
 
     # Визначаємо наступний день від моменту першого доступу
     if first_access_time.hour >= target_hour and first_access_time.minute >= target_minute:
@@ -21,12 +20,10 @@ def calculate_delay_from_first_access(chat_id, target_hour, target_minute=0, tar
         next_day = first_access_time + timedelta(days=target_day_offset)
 
     # Логування для перевірки next_day
-    print(f"next_day: {next_day}")
 
     target_time = next_day.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
 
     # Логування для перевірки target_time
-    print(f"target_time: {target_time}")
 
     # Якщо час ще не настав, обчислюємо затримку
     delay = (target_time - first_access_time).total_seconds()

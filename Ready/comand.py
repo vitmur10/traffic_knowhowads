@@ -179,7 +179,7 @@ https://balibeauty.com.ua/""")
         )
 
         add_or_update_user(chat_id, username, "3", 0)
-        await asyncio.sleep(60*60)
+        await asyncio.sleep(3600)
         await bot.send_message(chat_id, "https://wayforpay.com/uk/payparts", parse_mode="HTML")
         await bot.send_message(
             chat_id,

@@ -3,6 +3,7 @@ import csv
 import sqlite3
 from const import *
 from datetime import datetime
+import pytz
 
 
 # Ініціалізація бази даних
@@ -25,7 +26,8 @@ def init_db():
 
 def add_or_update_user(user_id: int, username: str, last_message: str, chat_id: int, is_blocked: int = 0):
     """Додає або оновлює користувача в базі даних"""
-    joined_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timezone = pytz.timezone('Europe/Kiev')
+    joined_at = datetime.now(timezone).strftime("%Y-%m-%d %H:%M:%S")
 
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
