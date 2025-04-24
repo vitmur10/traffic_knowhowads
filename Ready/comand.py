@@ -284,7 +284,7 @@ https://balibeauty.com.ua/""")
         ]
         await bot.send_media_group(chat_id=chat_id, media=media)
         add_or_update_user(chat_id, username, "6", 0)
-        await asyncio.sleep(3600*7)
+        await asyncio.sleep(3600*3)
         await bot.send_message(
             chat_id=chat_id,
             text="""<strong>Постачальники</strong> - це офіційні дистриб'ютори брендів в Україні. 
@@ -366,7 +366,7 @@ https://balibeauty.com.ua/""")
         ]
         await bot.send_media_group(chat_id=chat_id, media=media)
         add_or_update_user(chat_id, username, "9", 0)
-        await asyncio.sleep(3600*7)
+        await asyncio.sleep(3600*3)
 
         await bot.send_message(
             chat_id=chat_id,
